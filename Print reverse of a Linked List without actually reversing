@@ -1,0 +1,15 @@
+struct node             //constructing node
+{
+int data;
+struct node*link;
+};typedef structnode*NODE;
+
+//function 
+
+void displayFromEnd(node head)
+{
+if(!head)        //if (head == NULL)
+return;
+display(head->link);
+cout<<head->data<<"";
+}
