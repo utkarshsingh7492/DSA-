@@ -1,0 +1,33 @@
+struct node {
+int data;
+structnode*link;
+};typedef structnode* NODE;
+
+//function
+
+  NODE removeNthFromEnd(NODE head, int n)
+    {
+        
+        if (head == NULL)
+            return NULL;
+        NODE ptr1 = head;   
+        NODE ptr2 = head;
+        NODE prev = NULL;
+        for(int i = 1; i<=n ; i++)
+        {
+            ptr1 = ptr1 ->link;
+            
+        }         
+   while (ptr1 != NULL){
+       prev = ptr2;
+       ptr2 = ptr2 -> link;
+       ptr1 = ptr1 -> link;
+   }
+        if(ptr2 == head)
+            head = head ->link;
+        else{
+        prev ->next = ptr2 ->link;
+        delete ptr2;
+        }
+       return head;
+    }
