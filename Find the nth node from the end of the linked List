@@ -1,0 +1,27 @@
+struct node{
+int data;
+struct node*link;
+};typedef structnode* NODE ;
+
+//function 
+
+NODE nthfromEnd(NODE head, int n){
+if(!head)
+  return;
+  NODE cur = head;
+  NODE prev = head;
+  
+for(int i = 1 ; i<n ; i++)                    //suppose their is a linked list of 10 lists and 
+                                               n = 4 then cur will run till 3 as per the for loop
+ {                                                after that cur and prev will start from their current position.i.e (cur from 3 and prev from head.)
+    cur = cur->link;
+      if(cur == NULL)
+        return NULL;
+  }
+    while(cur->link != NULL)
+     {
+       cur = cur -> link;
+       prev = prev -> link;
+     }
+   return prev;
+ }
