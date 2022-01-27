@@ -1,0 +1,10 @@
+NODE middleNode(NODE head){
+  NODE sptr = head;                               //taking 2 pointers one fast and 1 slow (fast jumps 2 time and slow 1 at a time)
+  NODE fptr = head;
+    while(fptr != NULL && fptr->link != NULL){                    //jump till reaches the last node
+      sptr = sptr ->link;
+      fptr = fptr->link->link;
+   }
+      return sptr;                                                   // when fptr will be at end of list then sptr will be in middle.
+    }
+  };
