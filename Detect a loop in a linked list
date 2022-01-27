@@ -1,0 +1,12 @@
+bool detectLoop(NODE head){                               //floyed's cycle algorithm
+NODE sptr = head;
+Node fptr = head;
+
+  while(fptr1 && fptr->link){
+   sptr =sptr->link;
+   fptr=fptr->link->link;
+  if(sptr == fptr)
+  
+  return true;
+}
+return false;
