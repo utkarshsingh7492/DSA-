@@ -1,0 +1,25 @@
+NODE deleteMid(struct Node* head)
+{
+                                              // Base cases
+    if (head == NULL && head->next == NULL)
+    {
+        return NULL;
+    }
+   NODE  cur = head;
+ 
+    // Find the count of nodes
+    int count = countOfNodes(head);
+ 
+    // Find the middle node
+    int mid = count / 2;
+ 
+    // Delete the middle node
+    while (mid-- > 1) {
+        head = head->link;
+    }
+ 
+    // Delete the middle node
+    head->link = head->link->link;
+ 
+    return cur;
+}
