@@ -1,0 +1,10 @@
+int check(NODE head){                   //return type is integer cause it will ,
+                                        //   return 0 if the true and 1 if false.
+while(head && head->link)    //checks whether the head or the link of head is not null
+{
+  head = head->link->link;        //jumps 2 node at a time
+ }
+ if(!head)                         //check if no head then even ,if head then false
+       return 0;
+   return 1;
+}
