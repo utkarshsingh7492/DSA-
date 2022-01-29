@@ -1,0 +1,22 @@
+NODE start(NODE head){
+NODE fptr = head;
+NODE sptr = head;
+int loop_exist = 0;
+  while(sptr && fptr && fptr -> link)
+  {
+    sptr = sptr -> link;
+    fptr = fptr -> link -> link;
+      if(sptr==fptr){
+        loop_exist=1;
+        break;
+      }
+  }
+ if(loop_exist)
+  {
+    sptr = head;
+    while(sptr!=fptr)
+  }
+  return sptr;
+}
+  return NULL;
+  }
