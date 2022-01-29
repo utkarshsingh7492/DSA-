@@ -1,0 +1,31 @@
+int loop(NODE head){                                         //first we will find the loop using two pointer  or (floyed's cycle algorithm)  
+NODE sptr = head; NODE fptr = head;
+int count = 0;
+int loop_exist = 0;
+  while(sptr->link && fptr->link){
+    sptr = sptr->link;
+    fptr = fptr->link->link;
+  }
+   if(sptr==fptr){
+    loop_exist = 1;
+    break;
+    }
+  }
+
+//if loop exist                                                    //deletion function if the loop is detected.
+
+if(loop_exist)
+{
+  fptr = fptr->link;
+  while(sptr!=fptr)
+  {
+  count++;
+    fptr=fptr->link;
+  }
+    return count;
+}
+  return 0;
+}
+  
+
+
