@@ -1,0 +1,11 @@
+void delete(NODE head){
+  NODE prev;
+  while(node ->link != NULL)
+  { prev = node;                                //here, node is a random node to be deleted.
+    node -> data = node ->link ->data;
+    node = node -> link;
+  }
+  prev -> link = NULL;
+ return; 
+}
+
