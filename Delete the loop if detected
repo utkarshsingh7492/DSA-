@@ -1,0 +1,25 @@
+NODE removeLoop(NODE head){
+NODE sptr = head;
+NODE fptr = head;
+int loopexist = 0;
+while(sptr && fptr && fptr -> link)
+  { sptr = sptr -> link;
+    fptr = fptr -> link -> link;
+    if(sptr == fptr)
+      { loopexist = 1;
+          break;
+      }
+  }
+  
+  if(loopexist)             // we will point sptr at head and leave fptr in the loop and will continue jumping with 1 step for both pointers.
+    {
+    sptr = head;
+    while(sptr ->link != fptr -> link)      //when the address in the pointers will be same then we will return the fptr link as NULL and this way
+      { sptr = sptr -> link;                    the loop will stretch and at last we will return head.
+        fptr = fptr -> link;
+      }
+      fptr->link = NULL;
+      return head;
+    }
+    return NULL;
+}
