@@ -1,0 +1,10 @@
+int length(NODE head){
+int count = 0;                    // taking a counter variable 
+NODE cur = head;                   //will take a pointer at head which will traverse the entire linked list till NULL.
+  while(cur != NULL)
+  { 
+    count++;
+``  cur = cur -> link;
+  }
+  return count;                        //return the count 
+} 
