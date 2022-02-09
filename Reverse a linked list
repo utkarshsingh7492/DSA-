@@ -1,0 +1,13 @@
+ NODE reverseList(ListNode* head) {
+        NODE prev = NULL;
+        NODE curr = head;
+        NODE next;
+        
+    while(curr!= NULL){
+        next = curr->link;
+        curr-> link = prev;
+        prev = curr;
+        curr = next;
+    }
+        return prev;
+    }
