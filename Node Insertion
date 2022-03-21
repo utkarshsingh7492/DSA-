@@ -1,0 +1,59 @@
+struct node
+{
+int data;
+Node*next;
+}; typedef NODE;
+
+// At Front
+
+void insertatfront(Node head,int data)
+{
+ NODE temp = (NODE)malloc (sizeof(structnode));
+ temp->data = data;
+ temp->next = NULL;
+ if(!head)
+   return temp;
+  temp->next = head;
+  head = temp;
+  return head;
+}
+
+//At Rear
+
+void insertatrear(NODE head,int data)
+{
+NODE temp = (NODE) malloc (sizeof(structnode));
+temp->data = data;
+temp->next = NULL;
+
+NODE cur = head;
+if(!head)
+  return temp;
+  while(cur->next!=NULL)
+  cur=cur->next;
+  cur->next= temp;
+  return head;
+}
+
+// At position
+
+NODE insertatpos(NODE head, int data, int pos)
+}
+NODE temp,cur,prev;
+int k = 1;
+temp =(NODE)malloc(sizeof(structnode));
+temp->data = data;
+temp->next = NULL
+if(!head)
+ return temp;
+ cur = head;
+ while(cur->next!=NULL &&k<pos)
+ {
+ prev = cur;
+ cur= cur->next;
+ k++;
+ }
+ temp->next=cur;
+ prev->link=temp;
+ return head;
+}
