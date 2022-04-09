@@ -23,3 +23,25 @@ NODE deleteMid(struct Node* head)
  
     return cur;
 }
+
+
+//another approach
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode* sptr = head;
+        ListNode* prev = head;
+        ListNode* fptr = head;
+        while(fptr!=NULL && fptr -> next!= NULL){
+            prev = sptr;
+            sptr = sptr -> next;
+            fptr = fptr -> next -> next;
+        }
+        prev->next=sptr->next;
+        
+        
+          return head;
+}
+   
+  
