@@ -8,3 +8,21 @@ NODE middleNode(NODE head){
       return sptr;                                                   // when fptr will be at end of list then sptr will be in middle.
     }
   };
+
+
+//another approach
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        int len=0;
+        ListNode*tmp=head; 
+        while(tmp){  
+            tmp=tmp->next; 
+            len++;
+        } 
+        len/=2;
+        while(len--) head=head->next;
+        return head;
+    }
+};
