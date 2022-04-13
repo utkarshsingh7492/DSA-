@@ -31,3 +31,53 @@ else
       }
  return NULL;
 }
+
+
+
+
+
+
+
+
+
+//leetcode accpetd
+
+ ListNode *getIntersectionNode(ListNode *head1, ListNode *head2) {
+        ListNode * list1 = head1;                          
+ ListNode * list2 = head2;  
+                                          //initializing both at each head
+int l1=0, l2=0 , diff=0;              //l1 and l2 are the length of list and diff is the difference between then
+  while(list1 != NULL){
+    l1++;                                 //calculating the length of list l1 and l2
+    list1 = list1 -> next;                   
+  }
+  while(list2 != NULL){
+    l2++;
+    list2 = list2 -> next;
+  }
+  
+if(l1<l2)                                    //comparing the length 
+ { list1 = head2;                           //  and we will make the shorter one jump the                       // 'diff' value is the diff comes 2 then will
+                                             //  make the shorter list jump 
+  list2 = head1;
+  diff = l2 - l1;
+ }
+else
+  { list1 = head1;
+    list2 = head2;
+    diff = l1 - l2;
+  }
+    for(int i = 0; i < diff; i++)
+        list1 = list1->next;
+     while(list1 != NULL && list2 != NULL)
+      { 
+         if(list1 == list2)
+          return list1;
+          list1 = list1-> next;
+          list2 = list2-> next;
+      }
+ return NULL;
+}
+        
+    
+};
